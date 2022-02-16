@@ -5,12 +5,15 @@ const wbModel = WordBlanksFactory("To be or not to be, that is the __noun__. Whe
 
 const wbView = WordBlanksView(wbModel);
 
+console.log(wbModel.filledString);
+console.log(wbModel.wordBlanks)
+
 
 document.body.append(
-  wbView.domEl
+  wbView
 )
 
-wbView.domEl.addEventListener("wordblank.changed", (event)=>{
+wbView.addEventListener("wordblank.changed", (event)=>{
   const {id, value} = event.detail
   wbModel.byId(id).entry=value;
   
@@ -18,6 +21,6 @@ wbView.domEl.addEventListener("wordblank.changed", (event)=>{
     detail: wbModel
   })
 
-  wbView.domEl.dispatchEvent(updatedEvent);
+  wbView.dispatchEvent(updatedEvent);
 })
 

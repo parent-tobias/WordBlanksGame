@@ -23,7 +23,7 @@ const WordBlanksFactory = (string)=>{
     get originalString(){ return string; },
     get filledString(){
       return String.raw({raw: string.split(/__[a-z\s]*[a-z]__/i)}, ...blanks.map((blank)=>blank.entry ? blank.entry : '_______'))
-	},
+	  },
     byId: (id)=>blanks.find(blank => blank.id===id),
     get words(){return blanks.map((blank)=>blank.entry) },
     get blanks(){return blanks.map((blank)=>blank.type) },

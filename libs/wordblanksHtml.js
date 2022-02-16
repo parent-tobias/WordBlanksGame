@@ -2,7 +2,7 @@ import toHtml from './toHtml.js'
 
 const createWordBlankInput = ({id, type, entry})=>{
   const input = toHtml(`
-<label class='wordblank-label'>${type}: 
+<label class='wordblank-label'><span>${type}:</span> 
   <input class='wordblank-input' 
          type='text' 
          placeholder="${type}" 
@@ -57,9 +57,7 @@ const WordBlankView = ({filledString, wordBlanks})=>{
     
   })
 
-  return {
-    domEl
-  }
+  return domEl
 }
 
 export default WordBlankView;

@@ -1,0 +1,15 @@
+ul {
+  list-style-type: none;
+}
+ul label {
+  width: 100%;
+  display: flex;
+  margin: .25em auto;
+}
+
+label span {
+  width: 30%;
+}
+label input {
+  width: 60%;
+}
